@@ -1,0 +1,184 @@
+/* ============================================
+   Sale Banner - Premium Promotion Banner
+   ============================================ */
+
+.sale-banner {
+    position: fixed;
+    top: 70px;
+    /* Below navbar */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    /* Below navbar z-index of 1000 */
+    background: linear-gradient(90deg, #8b1018 0%, #b8141d 25%, #d4424a 50%, #b8141d 75%, #8b1018 100%);
+    background-size: 200% 100%;
+    animation: saleBannerShimmer 4s ease-in-out infinite;
+    padding: 28px 20px 14px 20px;
+    /* More top padding to push text 'neeche' */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(184, 20, 29, 0.4);
+}
+
+@keyframes saleBannerShimmer {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.sale-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.sale-banner-sparkle {
+    font-size: 1rem;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.sale-banner-text {
+    text-align: center;
+}
+
+.sale-banner-text strong {
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.sale-highlight {
+    color: #e8c77a;
+    font-weight: 700;
+    font-size: 1rem;
+    text-shadow: 0 0 10px rgba(232, 199, 122, 0.5);
+}
+
+.sale-code {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sale-banner-cta {
+    background: #e8c77a;
+    color: #0a0203;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.sale-banner-cta:hover {
+    background: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(232, 199, 122, 0.4);
+}
+
+.sale-banner-close {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.sale-banner-close:hover {
+    color: white;
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sale-banner {
+        top: 60px;
+        /* Smaller navbar on mobile */
+        padding: 10px 40px 10px 15px;
+    }
+
+    .sale-banner-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.75rem;
+    }
+
+    .sale-banner-sparkle {
+        display: none;
+    }
+
+    .sale-highlight {
+        font-size: 0.85rem;
+    }
+
+    .sale-banner-cta {
+        padding: 5px 12px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sale-banner {
+        top: 55px;
+        padding: 8px 35px 8px 10px;
+    }
+
+    .sale-banner-text {
+        font-size: 0.65rem;
+        line-height: 1.4;
+    }
+
+    .sale-code {
+        padding: 2px 6px;
+        font-size: 0.6rem;
+    }
+
+    .sale-banner-cta {
+        padding: 4px 10px;
+        font-size: 0.65rem;
+    }
+
+    .sale-banner-close {
+        right: 8px;
+        font-size: 1.2rem;
+    }
+}
